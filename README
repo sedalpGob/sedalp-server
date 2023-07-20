@@ -1,0 +1,42 @@
+
+1. Clone el proyecto
+
+2. Instale las dependencias del proyecto, abra la terminal y redirijase a la direccion del proyecto clonado
+
+```
+npm i
+```
+
+3. El archivo ```.env.template``` renombrar a ```.env```
+4. El archivo ```.env``` ingresar los valores correspondientes a las variables, ejemplo
+
+```
+PORT=8080
+DATA_BASE_HOST=192.168.191.100:27017
+DATA_BASE_NAME=sedalp
+```
+5. Ejecutar el archivo app.js de la raiz del proyecto
+```
+node app.js
+```
+6. Para verificar que si esta funcionando correctamente muestra en consola
+```
+Servidor corriendo en el puerto  8080
+Conexión a MongoDB exitosa
+```
+Si no muestra ninguno de estas saldias en consola revisar los logs, 
+*  posibles errores, puerto ya ocupado
+*  dirreccion de base de datos incorrecto
+
+7. Para ejecutar en el servidor utilice ```pm2```, comando para ejecutar, dirijase a la raiz del proyecto
+```pm2 start app.js```
+la aplicacion estara ejecutandose en la terminal del servidor
+8. Para verificar que si esta corriendo la app
+```pm2 list```
+mostrara el listado de la aplicacion y estara pintado en verde de que si esta corriendo, si no revizar los logs
+Posibles errores
+*  posibles errores, puerto ya ocupado
+*  dirreccion de base de datos incorrecto
+*  firewalld
+*  verificar la configuracion de nginx archivo ```default```
+
